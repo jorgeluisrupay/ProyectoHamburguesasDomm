@@ -1,0 +1,79 @@
+
+body {
+    background-color: #110f0fea;
+  }
+  header, .alert{
+    z-index: 100;
+  }
+  .menu__link {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+  .banner__imgP{
+    object-fit: cover;
+  }
+  .description{
+    height: 25px;
+    overflow: hidden;
+    transition: height .3s ease-in .3s;
+  }
+  .description:hover{
+    height: 80px;
+  }
+  .carrito{
+    min-height: 80vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .table__productos{
+    display: flex;
+  }
+  .table__productos > img{
+    width: 9rem;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-right: 20px;
+  }
+  .table__cantidad > input{
+    width: 40px;
+    border: none;
+    outline: 0;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 30px;
+    margin-bottom: 20px;
+  }
+  .hide, .remove{
+    display: none;
+  }
+  .main-header{
+    color: white;
+  }
+  @media screen and (max-width: 600px) {
+    table {
+        width:100%;
+    }
+    thead {
+        display: none;
+    }
+    tr:nth-of-type(2n) {
+        background-color: inherit;
+    }
+    tr td:first-child {
+        background: #f0f0f0;
+        font-weight:bold;
+        font-size:1.3em;
+    }
+    tbody td {
+        display: block;
+        text-align:center;
+    }
+    tbody td:before {
+        content: attr(data-th);
+        display: block;
+        text-align:center;
+    }
+}
