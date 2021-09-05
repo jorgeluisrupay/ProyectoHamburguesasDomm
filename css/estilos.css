@@ -165,7 +165,7 @@ h6 {
 }
 
 .mostrar {
-    height: 196px;
+    height: 265px;
 }
 
 /* -------------------------------- ESTILOS DEL BANNER -------------------------------- */
@@ -407,9 +407,9 @@ h6 {
 }
 
 @media screen and (min-width:768px) {
-    .main__title {
-        /*        border: 2px solid blue;*/
-    }
+    /* .main__title {
+        border: 2px solid blue;
+    } */
 
     .main__about__description {
         margin-top: 30px;
@@ -532,7 +532,7 @@ h6 {
     }
 
     .today-special__img {
-        height: :300px;
+        height: 300px;
     }
 
 

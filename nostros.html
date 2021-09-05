@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto</title>
+    <title>Hamburguesas Domm</title>
+    <!-- Para dispositivos moviles -->
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0,
      maximum-scale=3.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nosotros.css">
+    <link rel="stylesheet" href="css/mapa.css">
+
 </head>
+
 <body>
     <header class="main-header">
         <div class="container container--flex">
             <div class="logo-container column column--50">
-                <h1 class="logo">Mi Restaurante</h1>
+                <h1 class="logo">Hamburguesas Domm</h1>
             </div>
             <div class="main-header__contactInfo column column--50">
                 <p class="main-header__contactInfo__phone">
                     <span class="icon-phone">999-999-999</span>
                 </p>
                 <p class="main-header__contactInfo__address">
-                    <span class="icon-location">Calle Umaru Mz. C Lte. 11</span>
+                    <span class="icon-location">Av. Universitaria 567, San Miguel 15087</span>
                 </p>
             </div>
         </div>
@@ -30,10 +35,11 @@
         <div class="container container--flex">
             <span class="icon-menu" id="btnmenu"></span>
             <ul class="menu " id="menu">
-                <li class="menu__item"><a href="index.html" class="menu__link menu__link--select">Inicio</a></li>
-                <li class="menu__item"><a href="nosotros.html" class="menu__link">Nosotros</a></li>
+                <li class="menu__item"><a href="index.html" class="menu__link">Inicio</a></li>
+                <li class="menu__item menu__link--select"><a href="nosotros.html" class="menu__link">Nosotros</a></li>
                 <li class="menu__item"><a href="galeria.html" class="menu__link">Galería</a></li>
                 <li class="menu__item"><a href="contacto.html" class="menu__link">Contacto</a></li>
+                <li class="menu__item"><a href="producto.html" class="menu__link">Comprar</a></li>
             </ul>
             <div class="social-icon">
                 <a href="" class="social-icon__link"><span class="icon-facebook"></span></a>
@@ -44,80 +50,62 @@
     </nav>
 
     <section class="banner">
-        <img src="img/banner.jpg" alt="" class="banner__img">
-        <div class="banner__content">Las mejores hamburguesas estan aquí</div>
+        <img src="img/banner-about.jpg" alt="" class="banner__img">
+        <div class="banner__content">Lo mejor de nosotros a tu servicio</div>
     </section>
 
     <main class="main">
 
         <section class="group group--color">
             <div class="container">
-                <h2 class="main__title">Bienvenido a su restaurante</h2>
-                <p class="main__txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, numquam, id
-                    architecto accusamus accusantium voluptatibus, laborum libero quae cum nihil doloremque magnam
-                    placeat? Corrupti repellat perferendis dignissimos quam nesciunt voluptatibus.</p>
+                <h2 class="main__title">Nuestro equipo</h2>
+                <p class="main__txt">Está conformado por un personal altamente preparado y capacitado
+                    en la preparación de cada uno de nuestros platillos.
+                </p>
             </div>
         </section>
-
-        <section class="group main__about__description">
+        <section class="group our-team">
+            
             <div class="container container--flex">
-                <div class="column column--50">
-                    <img src="img/food1.jpg" alt="">
+                <div class="column column--33">
+                    <h3 class="our-team__title">Anthony</h3>
+                    <img src="img/chef1.jpg" alt="" class="our-team__img">
+                    <p class="our-team__txt">Encargado de las frituras del contenido de la hamburguesa. </p>
                 </div>
-                <div class="column column--50">
-                    <h3 class="column__title">Hamburguesa guerrera</h3>
-                    <p class="column__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-                        necessitatibus perspiciatis officia sapiente eum repellat cum cumque aliquid, aperiam
-                        dignissimos magnam mollitia rem laudantium! Debitis quos minus itaque amet dolor.</p>
-                    <a href="contacto.html" class="btn btn--contact">Contacto</a>
+                <div class="column column--33">
+                    <h3 class="our-team__title">Fatima</h3>
+                    <img src="img/chef2.jpg" alt="" class="our-team__img">
+                    <p class="our-team__txt">Encargada de la elaboración del terminado de la hamburguesa.</p>
                 </div>
-            </div>
-        </section>
-
-        <section class="group today-special">
-            <h2 class="group__title">Especiales de hoy</h2>
-            <div class="container container--flex">
-                <div class="column column--50-25">
-                    <img src="img/plate1.jpg" alt="" class="today-special__img">
-                    <div class="today-special__title">Hamburguesa especial 1</div>
-                    <div class="today-special__price">S/. 9.50</div>
-                </div>
-                <div class="column column--50-25">
-                    <img src="img/plate2.jpg" alt="" class="today-special__img">
-                    <div class="today-special__title">Hamburguesa especial 2</div>
-                    <div class="today-special__price">S/. 6.50</div>
-                </div>
-                <div class="column column--50-25">
-                    <img src="img/plate3.jpg" alt="" class="today-special__img">
-                    <div class="today-special__title">Hamburguesa especial 3</div>
-                    <div class="today-special__price">S/. 17.50</div>
-                </div>
-                <div class="column column--50-25">
-                    <img src="img/plate4.jpg" alt="" class="today-special__img">
-                    <div class="today-special__title">Hamburguesa especial 4</div>
-                    <div class="today-special__price">S/. 11.00</div>
+                <div class="column column--33">
+                    <h3 class="our-team__title">Carlos</h3>
+                    <img src="img/chef3.jpg" alt="" class="our-team__img">
+                    <p class="our-team__txt">Encargado del empaquetamiento de la hamburguesa para el público final. </p>
                 </div>
             </div>
         </section>
-
+        <br>
+        <h1 class="ubicacion group__title">✒ Nuestra Ubicacion</h1>
+        <div id="map"></div>
+        <br>
+<script src="js/mapa.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
     </main>
 
     <footer class="main-footer">
         <div class="container container--flex">
             <div class="column column--33">
                 <h2 class="column__title">¿Por qué visitarnos?</h2>
-                <p class="column__txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur quidem,
-                    ex officia architecto consectetur error incidunt aspernatur, rem recusandae molestiae doloribus
-                    saepe dicta vitae nobis, quasi numquam? Odio, iusto quaerat.</p>
+                <p class="column__txt">Somos una cadena de hamburguesas que ofrece una variedad de menús, aparte de una muy buena atención al cliente.</p>
             </div>
             <div class="column column--33">
                 <h2 class="column__title">Contáctanos</h2>
-                <p class="column__txt">Calle Umaru Mz. C Lte. 11</p>
+                <p class="column__txt"> Av. Universitaria 567, San Miguel 15087</p>
                 <p class="column__txt">
                     <a href="" class="icon-phone"> 999-999-999</a>
                 </p>
                 <p class="column__txt">
-                    <a href="" class="icon-location"> Jr. Umaru Mz. C Lte. </a>
+                    <a target="_BLANK" href="https://www.google.com/maps/place/Hamburguesia/@-12.08497,-77.0851072,17z/data=!4m12!1m6!3m5!1s0x9105c9745b01586d:0xbd5e52137c7abbc7!2sHamburguesia!8m2!3d-12.084268!4d-77.08291!3m4!1s0x9105c9745b01586d:0xbd5e52137c7abbc7!8m2!3d-12.084268!4d-77.08291" class="icon-location"> Av. Universitaria 567, San Miguel 15087 </a>
                 </p>
             </div>
             <div class="column column--33">
@@ -126,9 +114,21 @@
                 <p class="column__txt"><a href="" class="icon-twitter">Síguenos en Twitter</a></p>
                 <p class="column__txt"><a href="" class="icon-youtube">Visita nuestro canal</a></p>
             </div>
-            <p class="copy">© 2020 Restaurante | Todos los derechos reservados</p>
+            <p class="copy">© 2021 Restaurante | Todos los derechos reservados</p>
         </div>
     </footer>
     <script src="js/menu.js"></script>
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+<!--asd-->
