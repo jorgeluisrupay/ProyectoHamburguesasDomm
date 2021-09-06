@@ -1,6 +1,6 @@
-const Clickbutton = document.querySelectorAll('.button')
+const Clickbutton = document.querySelectorAll('.button-add')
 const tbody = document.querySelector('.tbody')
-let carrito = []
+var carrito = []
 
 Clickbutton.forEach(btn => {
   btn.addEventListener('click', addToCarritoItem)
@@ -15,7 +15,7 @@ function addToCarritoItem(e){
   const itemImg = item.querySelector('.card-img-top').src;
   
   const newItem = {
-    title: itemTitle,
+    nombre: itemTitle,
     precio: itemPrice,
     img: itemImg,
     cantidad: 1
@@ -36,7 +36,7 @@ function addItemCarrito(newItem){
 
   const InputElemnto = tbody.getElementsByClassName('input__elemento')
   for(let i =0; i < carrito.length ; i++){
-    if(carrito[i].title.trim() === newItem.title.trim()){
+    if(carrito[i].nombre.trim() === newItem.nombre.trim()){
       carrito[i].cantidad ++;
       const inputValue = InputElemnto[i]
       inputValue.value++;
@@ -61,9 +61,9 @@ function renderCarrito(){
     <th scope="row">✔</th>
             <td class="table__productos">
               <img src=${item.img}  alt="">
-              <h6 class="title">${item.title}</h6>
+              <h6 class="title">${item.nombre}</h6>
             </td>
-            <td class="table__price"><p>${item.precio}</p></td>
+            <td class="table__price"><p>S/. ${item.precio}</p></td>
             <td class="table__cantidad">
               <input type="number" min="1" value=${item.cantidad} class="input__elemento">
               <button class="delete btn btn-danger">x</button>
@@ -84,11 +84,11 @@ function CarritoTotal(){
   let Total = 0;
   const itemCartTotal = document.querySelector('.itemCartTotal')
   carrito.forEach((item) => {
-    const precio = Number(item.precio.replace("$", ''))
+    const precio = Number(item.precio)
     Total = Total + precio*item.cantidad
   })
 
-  itemCartTotal.innerHTML = `Total $${Total}`
+  itemCartTotal.innerHTML = `Total S/. ${Total}`
   addLocalStorage()
 }
 
@@ -98,7 +98,7 @@ function removeItemCarrito(e){
   const title = tr.querySelector('.title').textContent;
   for(let i=0; i<carrito.length ; i++){
 
-    if(carrito[i].title.trim() === title.trim()){
+    if(carrito[i].nombre.trim() === title.trim()){
       carrito.splice(i, 1)
     }
   }
@@ -119,7 +119,7 @@ function sumaCantidad(e){
   const tr = sumaInput.closest(".ItemCarrito")
   const title = tr.querySelector('.title').textContent;
   carrito.forEach(item => {
-    if(item.title.trim() === title){
+    if(item.nombre.trim() === title){
       sumaInput.value < 1 ?  (sumaInput.value = 1) : sumaInput.value;
       item.cantidad = sumaInput.value;
       CarritoTotal()
@@ -139,3 +139,46 @@ window.onload = function(){
   }
 }
 console.log(addLocalStorage);
+
+$("#orderform").submit(function(event) {
+  event.preventDefault();
+  var orden = {
+      nombreyapellido: $('#nombre').val(),
+      telefono: $('#telefono').val(),
+      direccion: $('#direccion').val(),
+      correo: $('#correo').val(),
+      productos: carrito
+    };
+
+  console.info("carrito: ", orden)
+  $.ajax({
+      type: "POST",
+      url: "https://api-backend-burger-burguerdoom.herokuapp.com/api/cart/save",
+      data: JSON.stringify(orden),
+      async:false,
+      dataType: 'json',
+      contentType: "application/json",
+      
+      success: function(responseData, textStatus, jqXHR) {
+          console.log(responseData.description);
+          var modal = document.getElementById("confirm-order-modal");
+          modal.style.display = "none";
+          localStorage.clear();
+          carrito = []
+          renderCarrito()
+          alert(responseData.description)
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+          console.log(errorThrown);
+      }
+  })
+});
+
+$('orderform').submit(function(){
+  var valid = true;
+  $('input[required]').each(function(i, el){
+     if(valid && $(el).val()=='' ) valid = false; 
+  })
+ 
+ return valid;
+ })

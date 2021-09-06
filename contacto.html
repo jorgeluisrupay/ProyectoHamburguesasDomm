@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Galeria | Hamburguesas Domm</title>
+    <title>Hamburguesas Domm</title>
     <link rel="icon" href="img/domm.ico">
     <!-- Para dispositivos moviles -->
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0,
@@ -11,11 +11,10 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/contacto.css">
-
 </head>
 
 <body>
-	<header class="main-header">
+    <header class="main-header">
         <div class="container container--flex">
             <div class="logo-container column column--50">
                 <h1 class="logo">Hamburguesas Domm</h1>
@@ -30,7 +29,7 @@
             </div>
         </div>
     </header>
-	
+
     <nav class="main-nav">
         <div class="container container--flex">
             <span class="icon-menu" id="btnmenu"></span>
@@ -63,7 +62,7 @@
                     <p class="column_txt"></p>
                     <p class="column_txt"><span class="icon-phone"></span>Teléfono 1: 999-999-999</p>
                     <p class="column_txt"><span class="icon-phone"></span>Teléfono 2: 555-555-555</p>
-                    <p class="column_txt"><span class="icon-location"></span>Calle Umaru Mz. C Lte. 11</p>
+                    <p class="column_txt"><span class="icon-location"></span>Av. Universitaria 567, San Miguel 15087</p>
                     <p class="column_txt"><span class="icon-mail"></span>consultas@restaurante.com</p>
                     <div class="social-icon">
                         <a href="" class="social-icon__link"><span class="icon-facebook"></span></a>
@@ -71,17 +70,17 @@
                         <a href="" class="social-icon__link"><span class="icon-mail"></span></a>
                     </div>
                 </div>
-                <form action="" method="post" class="formulario column--50">
-                    <label for="" class="formulario__label">Nombre:</label>
-                    <input type="text" class="formulario__input--txt" name="nombre">
-                    <label for="" class="formulario__label">Correo:</label>
-                    <input type="text" class="formulario__input--txt" name="correo">
-                    <label for="" class="formulario__label">Teléfono:</label>
-                    <input type="text" class="formulario__input--txt" name="telefono">
-                    <label for="" class="formulario__label">Mensaje:</label>
-                    <textarea name="mensaje" id="" cols="30" rows="10" class="formulario__textarea"></textarea>
-                    <input type="submit" class="btn formulario__btn" 
-                </form>
+                <form id="contactus" method="post" class="formulario column--50">
+                    <label for="nombre" class="formulario__label">Nombre:</label>
+                    <input type="text" id="nombre" class="formulario__input--txt" name="nombre">
+                    <label for="correo" class="formulario__label">Correo:</label>
+                    <input type="text" id="correo" class="formulario__input--txt" name="correo">
+                    <label for="telefono" class="formulario__label">Teléfono:</label>
+                    <input type="text" id="telefono" class="formulario__input--txt" name="telefono">
+                    <label for="mensaje" class="formulario__label">Mensaje:</label>
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="formulario__textarea"></textarea>
+                    <input type="submit" class="btn formulario__btn">
+                 </form>
             </div>
         </section>
 
@@ -91,7 +90,8 @@
         <div class="container container--flex">
             <div class="column column--33">
                 <h2 class="column__title">¿Por qué visitarnos?</h2>
-                <p class="column__txt">Somos una cadena de hamburguesas que ofrece una variedad de menús, aparte de una muy buena atención al cliente.</p>
+                <p class="column__txt">Somos una cadena de hamburguesas que ofrece una variedad de menús, aparte de una
+                    muy buena atención al cliente.</p>
             </div>
             <div class="column column--33">
                 <h2 class="column__title">Contáctanos</h2>
@@ -100,7 +100,9 @@
                     <a href="" class="icon-phone"> 999-999-999</a>
                 </p>
                 <p class="column__txt">
-                    <a target="_BLANK" href="https://www.google.com/maps/place/Hamburguesia/@-12.08497,-77.0851072,17z/data=!4m12!1m6!3m5!1s0x9105c9745b01586d:0xbd5e52137c7abbc7!2sHamburguesia!8m2!3d-12.084268!4d-77.08291!3m4!1s0x9105c9745b01586d:0xbd5e52137c7abbc7!8m2!3d-12.084268!4d-77.08291" class="icon-location"> Av. Universitaria 567, San Miguel 15087 </a>
+                    <a target="_BLANK"
+                        href="https://www.google.com/maps/place/Hamburguesia/@-12.08497,-77.0851072,17z/data=!4m12!1m6!3m5!1s0x9105c9745b01586d:0xbd5e52137c7abbc7!2sHamburguesia!8m2!3d-12.084268!4d-77.08291!3m4!1s0x9105c9745b01586d:0xbd5e52137c7abbc7!8m2!3d-12.084268!4d-77.08291"
+                        class="icon-location"> Av. Universitaria 567, San Miguel 15087 </a>
                 </p>
             </div>
             <div class="column column--33">
@@ -112,20 +114,12 @@
             <p class="copy">© 2021 Restaurante | Todos los derechos reservados</p>
         </div>
     </footer>
-    <script src="js/menu.js"></script>
-    <!-- <script src="js/modal.js"></script> -->
-
+    
 </body>
 
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/menu.js"></script>
+    <script type="text/javascript" src="./js/contact.js"></script>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-<!--asd-->
